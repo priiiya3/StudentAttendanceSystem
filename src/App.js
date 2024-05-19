@@ -25,11 +25,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='text-center'>Student Attendance System</h1>
-      <form onSubmit={createStudent} className="mx-auto w-50">
+      
+      <form onSubmit={createStudent} className="mx-auto w-50 from-container">
+        <h1 className='text-center'>The Office Attendance System</h1>
         <label htmlFor='name' className="text-center">Student Name: </label>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className='form-control'/><br />
-        <label htmlFor="rollno">Roll Number: </label>
+        <label htmlFor="rollno">Employee ID: </label>
         <input type="number" value={rollno} onChange={(e) => setRollno(e.target.value)} required className='form-control'/><br />
         <label htmlFor="checkInTime">Check-in Time</label>
         <input type="time" value={checkInTime} onChange={(e) => setCheckInTime(e.target.value)} required className='form-control w-25'/><br />
@@ -39,13 +40,13 @@ function App() {
       </form>
       <br />
 
-      <h2 className='text-center'>Students Present: {students.length}</h2>
+      <h2 className='text-center table-heading'>Employees Present: {students.length}</h2>
 
-      <table className="mt-5 table table-striped">
+      <table className="mt-5 table table-striped table-container">
         <thead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col">Roll Number</th>
+            <th scope="col">Employee ID</th>
             <th scope="col">CheckIn Time</th>
             <th scope="col">CheckOut Time</th>
           </tr>
